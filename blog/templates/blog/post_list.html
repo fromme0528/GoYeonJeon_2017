@@ -1,6 +1,20 @@
 {% extends 'blog/base.html' %}
 
+
+
 {% block content %}
+
+<h1>GoYeonJeon 2017</h1>
+<p class="lead">고연전</p>
+    	<p>간단한 소개</p>
+    	<p>9월 22일 (금요일)</p>
+    	<p>10:00 개막식 잠실야구장</p>
+    	<p>11:00 야구   잠실야구장</p>
+    	<p>15:00 농구   잠실실내체육관</p>
+    	<p>17:00 빙구   목동빙상장</p>
+    	<p>9월 23일 (토요일)</p>
+    	<p>11:00 야구   목동주경기장</p>
+    	<p>13:30 축구   목동주경기장</p>
 {% for post in posts %}
     <div class="post">
         <div class="date">
@@ -8,6 +22,9 @@
         </div>
         <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
         <p>{{ post.text|linebreaksbr }}</p>
+
     </div>
  {% endfor %}
  {% endblock %}
+
+

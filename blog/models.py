@@ -14,3 +14,9 @@ class Post(models.Model):
 
 	def __str__(self):
 		return self.title
+
+class Video(models.Model):
+    link = models.URLField()
+
+    def __str__(self):
+        return self.link

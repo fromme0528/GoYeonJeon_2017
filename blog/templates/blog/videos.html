@@ -1,0 +1,16 @@
+<h1>YouTube list</h1>
+{% if full_list %}
+    <ul>
+    {% for video in full_list %}
+        <li>
+<!-- link passed to embed code, this shows up as blank -->
+<iframe width="560" height="345" src="{{ video.link }}?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<!-- YouTube embed link copy/pasted as is -->
+<iframe width="560" height="345" src="http://www.youtube.com/embed/vLmNvYTTWXM?rel=0" frameborder="0" allowfullscreen></iframe>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No videos available</p>
+{% endif %}
