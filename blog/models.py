@@ -15,8 +15,33 @@ class Post(models.Model):
 	def __str__(self):
 		return self.title
 
+class Cheeringsongs(models.Model):
+	title = models.CharField(max_length=200)
+	lyric = models.TextField()
+	song_url = models.CharField(max_length=512)
+	def __str__(self):
+		return self.title
+
+
 class Video(models.Model):
-    link = models.URLField()
+	title = models.CharField(max_length=200)
+	video_url = models.CharField(max_length=512)
+	def __str__(self):
+		return self.title
+class Score(models.Model):
+	title = models.CharField(max_length=200)
+	location = models.CharField(max_length=200)
+	date = models.DateTimeField(blank=True,null=True)
+	score_k = models.CharField(max_length=8)
+	score_y = models.CharField(max_length=8)
+	message = models.TextField()
+
+	def __str__(self):
+		return self.title
+
+class AfterParty(models.Model) :
+    name = models.CharField(max_length=20)
+    location = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.link
+        return self.name

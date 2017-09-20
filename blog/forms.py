@@ -1,5 +1,5 @@
 from django import forms
-from .models import Post
+from .models import Post,Cheeringsongs
 
 class PostForm(forms.ModelForm):
 
@@ -7,4 +7,7 @@ class PostForm(forms.ModelForm):
 		model = Post
 		fields = ('title','text',)
 
-		
+class SongForm(forms.ModelForm):
+	class Meta:
+		model = Cheeringsongs
+		fields = ('title','rylic','url')
