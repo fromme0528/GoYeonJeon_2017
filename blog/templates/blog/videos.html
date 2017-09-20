@@ -1,16 +1,25 @@
-<h1>YouTube list</h1>
-{% if full_list %}
-    <ul>
-    {% for video in full_list %}
-        <li>
-<!-- link passed to embed code, this shows up as blank -->
-<iframe width="560" height="345" src="{{ video.link }}?rel=0" frameborder="0" allowfullscreen></iframe>
+{% extends 'blog/base.html' %}
+{% block content %}
 
-<!-- YouTube embed link copy/pasted as is -->
-<iframe width="560" height="345" src="http://www.youtube.com/embed/vLmNvYTTWXM?rel=0" frameborder="0" allowfullscreen></iframe>
-        </li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No videos available</p>
-{% endif %}
+
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-4">Cheering Videos for KU</h1>
+    <p>This is Cheering Dance Video</p>
+  </div>
+</div>
+
+<div class="container">
+      <div class="row">
+      	{% for video in videos %}
+	    <div class="col-md-4">
+	
+	    	<h6>Title : {{ video.title }} </h6>  	
+	    		<iframe width="320" height="180" src="http://www.youtube.com/embed/{{ video.video_url }}?enablejsapi=1" frameborder="0" allowfullscreen></iframe>	
+	    	
+    	</div>
+		{% endfor %}
+    </div>
+</div>
+
+{% endblock %}

@@ -23,4 +23,4 @@ def cheeringsongs(request):
 
 def videos(request):
     video_list = get_list_or_404(Video)
-    return render_to_response('blog/video.html', {'videos': video_list})
+    return render(request, 'blog/videos.html', {'videos': video_list})
