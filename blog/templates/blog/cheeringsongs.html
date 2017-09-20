@@ -2,47 +2,28 @@
 {% block content %}
 
 
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-4">Cheering Songs for Everyone</h1>
+    <p>This is Cheering Songs with Audio</p>
+  </div>
+</div>
 
-<h1>Cheering Songs for KU</h1><br><br>
 <div class="container">
-      <!-- Example row of columns -->
       <div class="row">
-      	{% for post in posts %}
-	    <div class="col-md-4l">
-	    	<h2> Title: {{cheeringsongs.title}} </h2>
-	    	<p> {{cheeringsongs.lyric}}</p>
-	    	<p>
-	    		<audio controls >
-					<source src="/static/audio/Sample.mp3" type="audio/mpeg">
-					Your browser does not support the audio element.  	
-				</audio> </p>
+      	{% for song in songs %}
+	    <div class="col-md-4">
+	
+	    	<h6> Title : {{ song.title }} </h6>
+	    		Lyrics
+	    		{{song.lyric}}
+				<p>
+				<audio controls>
+					<source src="/static/audio/sample.mp3" type="audio/mpeg">
+				</audio></p>
     	</div>
 		{% endfor %}
+    </div>
+</div>
 
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-        </div>
-
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-        </div>
-                <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-        </div>
-      </div>
-
-
-
-
- {% endblock %}
+{% endblock %}
