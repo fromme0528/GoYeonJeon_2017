@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 
 class Post(models.Model):
-	author = models.ForeignKey('auth.User')
+	#author = models.ForeignKey('auth.User')
 	title = models.CharField(max_length=200)
 	text = models.TextField()
 	created_date = models.DateTimeField(default=timezone.now)
@@ -28,14 +28,13 @@ class Video(models.Model):
 	video_url = models.CharField(max_length=512)
 	def __str__(self):
 		return self.title
+
 class Score(models.Model):
 	title = models.CharField(max_length=200)
 	location = models.CharField(max_length=200)
 	date = models.DateTimeField(blank=True,null=True)
-	score_k = models.CharField(max_length=8)
-	score_y = models.CharField(max_length=8)
-	message = models.TextField()
-
+	score_k = models.DecimalField(max_digits=5, decimal_places=2)
+	score_y = models.DecimalField(max_digits=5, decimal_places=2)
 	def __str__(self):
 		return self.title
 

@@ -1,13 +1,13 @@
 from django import forms
-from .models import Post,Cheeringsongs
+from .models import Post, Score
 
 class PostForm(forms.ModelForm):
-
 	class Meta:
 		model = Post
 		fields = ('title','text',)
 
-class SongForm(forms.ModelForm):
+class ScoreForm(forms.ModelForm):
 	class Meta:
-		model = Cheeringsongs
-		fields = ('title','rylic','url')
+		model = Score
+		fields = ('title','location','date','score_k','score_y')
+

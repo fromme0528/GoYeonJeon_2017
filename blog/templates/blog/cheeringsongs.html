@@ -1,7 +1,6 @@
 {% extends 'blog/base.html' %}
 {% block content %}
 
-
 <div class="jumbotron">
   <div class="container">
     <h1 class="display-4">Cheering Songs for Everyone</h1>
@@ -15,11 +14,11 @@
 	    <div class="col-md-4">
 	
 	    	<h6> Title : {{ song.title }} </h6>
-	    		Lyrics
-	    		{{song.lyric}}
+	    		Lyric
+	    		<pre>{{song.lyric}}</pre>
 				<p>
 				<audio controls>
-					<source src="/static/audio/sample.mp3" type="audio/mpeg">
+					<source src="/static/audio/{{song.song_url}}.mp3" type="audio/mpeg">
 				</audio></p>
     	</div>
 		{% endfor %}
