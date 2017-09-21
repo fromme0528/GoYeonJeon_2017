@@ -9,13 +9,10 @@
         <h1>{{ message.title }}</h1>
         <h5>
         	<br>
-        	<p>Where : {{post.location}}</p>
-        	<p>How to get to veneu : </p></h5>
-        	<p>{{post.location_howto}}</p> 
-        	<p><h3>SCORE(Korea vs Yonsei)</h3></p>
-        	<p><h3>{{post.score_k}} : {{post.score_y}}</p></h3>
-       
-                   <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        	<p>{{message.text}}</p>
+        </h5>
+        <a class="btn btn-default" href="{% url 'post_list' %}"><h5>MAIN</h5></a>
+        <a class="btn btn-default" href="{% url 'message_new' %}"><h5>MORE MESSAGE</h5></a>
   </div>
 
 {% endblock %}
