@@ -23,14 +23,14 @@
   <tr>
     <td class="tg-e3zv">
     {% for post in posts %}
-        {% if post.title =='BASEBALL' %}
+        {% if post.title =='RUGBY' %}
     </td><td class = "tg-e3zv">
     <h3><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a> SCORE {{ post.score_k}} : {{post.score_y}} <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}">UPDATE!</a></h3>
-        <p>{{ post.location }}</p>
+        <p>Where : {{ post.location }}</p>
 
         {%else%}
     <h3><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a> SCORE {{ post.score_k}} : {{post.score_y}} <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}">UPDATE!</a></h3>
-        <p>{{ post.location }}</p>
+        <p>Where : {{ post.location }}</p>
         {%endif%} 
     {% endfor %}
     </td>
