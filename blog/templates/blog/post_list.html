@@ -25,12 +25,12 @@
     {% for post in posts %}
         {% if post.title == 'RUGBY' %}
     </td><td class = "tg-e3zv">
-    <h3><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a> SCORE {{ post.score_k}} : {{post.score_y}} <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}">UPDATE!</a></h3>
-        <p>Where : {{ post.location }}</p>
+    <h3><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a> {{ post.score_k}} : {{post.score_y}} <br><a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}">UPDATE!</a></h3>
+        <p>{{ post.location }}</p>
 
         {%else%}
-    <h3><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a> SCORE {{ post.score_k}} : {{post.score_y}} <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}">UPDATE!</h3></a>
-        <p>Where :{{ post.location }}</p>
+    <h3><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a> {{ post.score_k}} : {{post.score_y}} <br><a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}">UPDATE!</h3></a>
+        <p>{{ post.location }}</p>
         {%endif%} 
     {% endfor %}
     </td>
@@ -39,9 +39,45 @@
 </table>
 
 <br><br><br>
-<h1>Cheer Up KU!</h1>
-<a href="{% url 'message_new' %}">Post<span class="glyphicon glyphicon-plus"></span></a>
+<div class="jumbotron">
+  <div class="container">
+<h1>This Year's Afterparty</h1>
+</div>
+</div>
 
+<br>
+ <img src="{% static 'img/shinchon.png' %}"; width = "60%"; height="60%";/>
+<br><br>
+<h6>Shinchon Specialty Street (Shinchon Station Line 2)</h6>
+
+
+<br><br>
+<div class="jumbotron">
+  <div class="container">
+<h1>Cheer Up KU!</h1>
+
+</div>
+</div>
+<div class="container">
+      <div class="row">
+        {% for test in tests %}
+        <div class="col-md-4">
+    
+            <h6><a href="{% url 'message_detail' pk=test.pk %}">Title : {{ test.title }}</a></h6>
+                <b>Message :</b>
+                <pre> {{test.text}}</pre>
+                
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+
+
+<a href="{% url 'message_new' %}">Post<span class="glyphicon glyphicon-plus"></span></a>
+<a href="{% url 'post_new' %}" class="top-menu">dfsdf<span class="glyphicon glyphicon-plus"></span></a>
  {% endblock %}
 
 

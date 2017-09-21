@@ -7,13 +7,14 @@
     <h2>Write Messages to KU!</h2>
     <br>
     <form method="POST" class="post-form">{% csrf_token %}
+
         <h5>Title : {{ form.title }}</h5>
         <br>
         <h5>MESSAGE</h5>
         {{ form.text }}
-
-        <p hidden> {{ form.created_time }}</p>
         <br>
+                <p hidden> {{ form.created_date }}</p>
+<br>
         <button type="submit" class="save btn btn-default">Save</button>
     </form>
       </div>
