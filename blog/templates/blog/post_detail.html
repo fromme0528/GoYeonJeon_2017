@@ -1,14 +1,21 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <div class="post">
-        {% if post.published_date %}
-            <div class="date">
-                {{ post.published_date }}
-            </div>
-        {% endif %}
-        <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}">수정숮ㅓㅇ<span class="glyphicon glyphicon-pencil"></span></a>
+
+<div class="jumbotron">
+  <div class="container">
+    {% load staticfiles %}
+
         <h1>{{ post.title }}</h1>
-        <p>{{ post.text|linebreaksbr }}</p>
-    </div>
+        <h5>
+        	<p>{{post.location}}</p>
+        	<p>{{post.location_howto}}</p>
+        	<p>SCORE</p>
+        	<p>{{post.score_k}} : {{score_y}}</p>
+        </h5>
+
+
+        <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}">UPDATE!</a></h3>
+  </div>
+
 {% endblock %}

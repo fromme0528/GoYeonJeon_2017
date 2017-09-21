@@ -1,13 +1,12 @@
 from django import forms
-from .models import Post, Score
+from .models import Post, Message
 
 class PostForm(forms.ModelForm):
 	class Meta:
 		model = Post
-		fields = ('title','text',)
+		fields = ('title','date','location','location_howto','score_k','score_y',)
 
-class ScoreForm(forms.ModelForm):
+class MessageForm(forms.ModelForm):
 	class Meta:
-		model = Score
-		fields = ('title','location','date','score_k','score_y')
-
+		model = Message
+		fields = ('title','text',)

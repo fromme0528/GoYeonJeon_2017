@@ -11,34 +11,37 @@
     <p> Since 1956, annual Korea-Yonsei games has served as the most hotly contested collegiate rivalries in the country. Five sports teams: football, rugby, baseball, basketball, and ice hockey teams compete against each other.</p>
   </div>
 </div>
+
+<h2>REALTIME SCORE</h2>
+<br>
 <table class = "table table-striped table-bordered table-hover" style="border: 1px solid red; width:100%; height: 100px; margin: auto; text-align: center;"
 
   <tr>
-    <td class="tg-e3zv">2017-09-22(금)</td>
-    <td class="tg-e3zv">2017-09-22(토)</td>
+    <td class="tg-e3zv"><h3>2017-09-22(금)</h3></td>
+    <td class="tg-e3zv"><h3>2017-09-22(토)</h3></td>
   </tr>
   <tr>
-    <td class="tg-e3zv"><p>10:00 개막식 잠실야구장</p>
-        <p>11:00 야구   잠실야구장</p>
-        <p>15:00 농구   잠실실내체육관</p>
-        <p>17:00 빙구   목동빙상장</p></td>
-    <td class="tg-e3zv"><p>11:00 야구   목동주경기장</p>
-        <p>13:30 축구   목동주경기장</p></td>
+    <td class="tg-e3zv">
+    {% for post in posts %}
+    {% if post.date == '1' %}
+    </td><td class = "tg-e3zv">
+    <h3><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a> SCORE {{ post.score_k}} : {{post.score_y}} <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}">UPDATE!</a></h3>
+        <p>{{ post.location }}</p>
+
+    {%else%}
+    <h3><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a> SCORE {{ post.score_k}} : {{post.score_y}} <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}">UPDATE!</a></h3>
+        <p>{{ post.location }}</p>
+    {%endif%} 
+ {% endfor %}
+    </td>
+
   </tr>
 </table>
 
 <br><br><br>
-<h1>응원의 말 남기기</h1>
+<h1>Cheer Up KU!</h1>
+<a href="{% url 'post_new' %}">Post<span class="glyphicon glyphicon-plus"></span></a>
 
-{% for post in posts %}
-    <div class="post">
-        <div class="date">
-            <p>published: {{ post.published_date }}</p>
-        </div>
-        <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-        <p>{{ post.text|linebreaksbr }}</p>
-    </div>
- {% endfor %}
  {% endblock %}
 
 

@@ -1,9 +1,21 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <h1>New post</h1>
-    <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
+
+<div class="jumbotron">
+  <div class="container">
+<h2>Update Score !</h2><br>
+	<form method="POST" class="post-form">{% csrf_token %}
+        <h4>KOREA UNIV SCORE : {{ form.score_k }}</h4>
+        <br>
+        <h4>YONSEI UNIV SCORE : {{ form.score_y }}</h4>
+
+        <p hidden> {{ form.title }} {{ form.location }} {{ form.date }} {{ form.location_howto }}</p>
+<br>
+
+        <button type="submit" class="save btn btn-default">Update</button>
     </form>
+  </div>
+</div>
+    
 {% endblock %}

@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.utils import timezone
-from .models import Post, Video, Cheeringsongs, Score, AfterParty
+from .models import Post, Video, Cheeringsongs, Message
 from .models import Video
 from django.shortcuts import render, get_object_or_404, get_list_or_404
-from .forms import PostForm, ScoreForm
+from .forms import PostForm, MessageForm
 from django.shortcuts import redirect
 
 # Create your views here.
@@ -32,7 +32,6 @@ def post_new(request):
         form = PostForm(request.POST)
         if form.is_valid():
             post = form.save()
-            post.published_date = timezone.now()
             post.save()
             return redirect('post_detail', pk=post.pk)
     else:
@@ -42,18 +41,16 @@ def post_new(request):
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":
-        form = PostForm(request.POST, instance=post)
-        if form.is_valid():
-            post = form.save()
-            post.published_date = timezone.now()
-            post.save()
-            return redirect('post_detail', pk=post.pk)
+        form = PostForm(request.POST, instance=post)     
+        post = form.save()
+        post.save(update_fields=["score_k"])
+        post.save(update_fields=["score_y"])
+        return redirect('post_detail', pk=post.pk)
     else:
         form = PostForm(instance=post)
-
     return render(request, 'blog/post_edit.html', {'form': form})
 
-def score_new(request):
+def message_new(request):
     if request.method == "POST":
         form = PostForm(request.POST)
         if form.is_valid():
@@ -65,7 +62,7 @@ def score_new(request):
         form = PostForm()
     return render(request, 'blog/post_edit.html', {'form': form})
 
-def score_edit(request, pk):
+def message_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":
         form = PostForm(request.POST, instance=post)
