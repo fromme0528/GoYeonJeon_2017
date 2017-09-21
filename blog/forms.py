@@ -1,5 +1,5 @@
 from django import forms
-from .models import Post,Test
+from .models import Test, Post
 
 class PostForm(forms.ModelForm):
 	class Meta:
@@ -10,3 +10,6 @@ class TestForm(forms.ModelForm):
 	class Meta:
 		model = Test
 		fields = ('title','text')
+
+
+

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post,Cheeringsongs,Video,Test
+from .models import Post,Cheeringsongs, Video, Test
 # Register your models here.
 
 admin.site.register(Post)
