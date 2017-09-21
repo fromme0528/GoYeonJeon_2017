@@ -8,14 +8,14 @@
 
         <h1>{{ post.title }}</h1>
         <h5>
-        	<p>{{post.location}}</p>
-        	<p>{{post.location_howto}}</p>
-        	<p>SCORE</p>
-        	<p>{{post.score_k}} : {{score_y}}</p>
-        </h5>
-
-
-        <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}">UPDATE!</a></h3>
+        	<br>
+        	<p>Where : {{post.location}}</p>
+        	<p>How to get to veneu : </p></h5>
+        	<p>{{post.location_howto}}</p> 
+        	<p><h3>SCORE(Korea vs Yonsei)</h3></p>
+        	<p><h3>{{post.score_k}} : {{post.score_y}}</p></h3>
+       
+        <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><h5>SCORE UPDATE!</h5></a>
   </div>
 
 {% endblock %}
