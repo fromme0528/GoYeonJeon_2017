@@ -4,7 +4,7 @@ from django.utils import timezone
 class Post(models.Model):
 	#author = models.ForeignKey('auth.User')
 	title = models.CharField(max_length=200)
-	date = models.CharField(max_length=1,default='0')
+	date = models.CharField(max_length=5,default='0')
 	location = models.CharField(max_length=200,default='location')
 	location_howto = models.CharField(max_length=200,default='location')
 	score_k =models.CharField(max_length=20,default='0')
