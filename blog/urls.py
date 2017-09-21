@@ -10,5 +10,4 @@ urlpatterns =[
 	url(r'^post/new/$', views.post_new, name='post_new'),
 	url(r'^post/(?P<pk>\d+)/edit/$', views.post_edit, name='post_edit'),
 	url(r'^message/new/$', views.message_new, name='message_new'),
-	url(r'^message/(?P<pk>\d+)/edit/$', views.message_edit, name='message_edit'),
 ]

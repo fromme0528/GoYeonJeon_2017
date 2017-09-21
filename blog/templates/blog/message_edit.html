@@ -1,9 +1,21 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <h1>New post</h1>
+
+<div class="jumbotron">
+  <div class="container">
+    <h2>Write Messages to KU!</h2>
+    <br>
     <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
+        <h5>Title : {{ form.title }}</h5>
+        <br>
+        <h5>MESSAGE</h5>
+        {{ form.text }}
+
+        <p hidden> {{ form.created_time }}</p>
+        <br>
         <button type="submit" class="save btn btn-default">Save</button>
     </form>
+      </div>
+</div>
 {% endblock %}
