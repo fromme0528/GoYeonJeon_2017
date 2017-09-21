@@ -14,7 +14,7 @@ class Post(models.Model):
 
 class Cheeringsongs(models.Model):
 	title = models.CharField(max_length=200)
-	
+
 	lyric = models.TextField()
 	song_url = models.CharField(max_length=512)
 	def __str__(self):
@@ -30,6 +30,7 @@ class Video(models.Model):
 class Test(models.Model):
 	title = models.CharField(max_length=200)
 	text = models.TextField()
+	a = models.TextField()
 
 	def __str__(self):
 		return self.title
