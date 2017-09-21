@@ -1,16 +1,35 @@
 {% extends 'blog/base.html' %}
 {% block content %}
-<h1>GoYeonJeon 2017</h1>
-<p class="lead">고연전</p>
-    	<p>간단한 소개</p>
-    	<p>9월 22일 (금요일)</p>
-    	<p>10:00 개막식 잠실야구장</p>
-    	<p>11:00 야구   잠실야구장</p>
-    	<p>15:00 농구   잠실실내체육관</p>
-    	<p>17:00 빙구   목동빙상장</p>
-    	<p>9월 23일 (토요일)</p>
-    	<p>11:00 야구   목동주경기장</p>
-    	<p>13:30 축구   목동주경기장</p>
+<div class="jumbotron">
+  <div class="container">
+    {% load staticfiles %}
+    <img src="{% static 'img/KoreaUnivLogo.png' %}"; width = "30%"; height="40%";/> <img src="{% static 'img/YonseiUnivLogo.png' %}"; width = "30%"; height="40%";/>
+    <h1 class="display-5">Korea – Yonsei Rivalry 2017</h1>
+    <br>
+    <p> The Korea-Yonsei rivalry is the college rivalry between two universities located in Seoul, South Korea. Both schools are regarded as the most prestigious private universities in South Korea.</p>
+
+    <p> Since 1956, annual Korea-Yonsei games has served as the most hotly contested collegiate rivalries in the country. Five sports teams: football, rugby, baseball, basketball, and ice hockey teams compete against each other.</p>
+  </div>
+</div>
+<table class = "table table-striped table-bordered table-hover" style="border: 1px solid red; width:100%; height: 100px; margin: auto; text-align: center;"
+
+  <tr>
+    <td class="tg-e3zv">2017-09-22(금)</td>
+    <td class="tg-e3zv">2017-09-22(토)</td>
+  </tr>
+  <tr>
+    <td class="tg-e3zv"><p>10:00 개막식 잠실야구장</p>
+        <p>11:00 야구   잠실야구장</p>
+        <p>15:00 농구   잠실실내체육관</p>
+        <p>17:00 빙구   목동빙상장</p></td>
+    <td class="tg-e3zv"><p>11:00 야구   목동주경기장</p>
+        <p>13:30 축구   목동주경기장</p></td>
+  </tr>
+</table>
+
+<br><br><br>
+<h1>응원의 말 남기기</h1>
+
 {% for post in posts %}
     <div class="post">
         <div class="date">
